@@ -1,80 +1,11 @@
+
 @extends('layouts.app')
-
-
-@section('Sidebar')
-
-<aside class="sidebar">
-    <div class="sidebar-header">
-        <h3><i class="fas fa-cube"></i> AdminPro</h3>
-    </div>
-
-    <ul class="nav-menu">
-        <li class="nav-item active">
-            <a href="#" class="nav-link active">
-                <i class="fas fa-tachometer-alt"></i>
-                <span class="menu-text">Dashboard</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-users"></i>
-                <span class="menu-text">Users</span>
-                <span class="badge">3</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-box-open"></i>
-                <span class="menu-text">Products</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="menu-text">Orders</span>
-                <span class="badge">5</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-chart-line"></i>
-                <span class="menu-text">Analytics</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-cog"></i>
-                <span class="menu-text">Settings</span>
-            </a>
-            <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Security</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Notifications</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-
-
-</aside>
-
-@endsection
 
 
 @section('Main_Content')
 
-<!-- Main Content -->
-<main class="main-content">
+  <!-- Main Content -->
+ <main class="main-content">
     <!-- Header -->
     <div class="header">
         <div class="d-flex align-items-center">
@@ -187,20 +118,6 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($orders as $order)
-                    <tr>
-                        <td>{{ $order->id}}</td>
-                        <td>{{ $order->customer_name}}</td>
-                        <td>{{ $order->date}}</td>
-                        <td>{{ $order->amount}}</td>
-                        <td>{{ $order->status}}</td>
-                        <td> 
-                            <a href="{{route('order.edit')}}" class="action-btn edit" title="Edit"><i class="fas fa-edit"></i></a>
-
-                            <a href="#" class="action-btn delete" title="Delete"><i class="fas fa-trash"></i></a>
-                        </td>
-                    </tr>
-                    @endforeach
 
 
 
@@ -222,5 +139,5 @@
         <p>© 2025 AdminPro Dashboard. All rights reserved. | Developed by Shahar Yar</p>
     </div>
 </main>
-
+    
 @endsection

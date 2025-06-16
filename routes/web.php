@@ -1,11 +1,20 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [OrderController::class, 'index'])->name('home');
+
+
+//create  and store
+Route::get('/order/create',[OrderController::class, 'create'])->name('order.create');
+Route::post('/order/store',[OrderController::class, 'store'])->name('order.store');
+
+//edit and
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -17,4 +26,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
