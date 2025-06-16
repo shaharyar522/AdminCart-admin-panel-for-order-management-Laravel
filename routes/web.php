@@ -11,7 +11,9 @@ Route::get('/', [OrderController::class, 'index'])->name('home');
 Route::get('/order/create',[OrderController::class, 'create'])->name('order.create');
 Route::post('/order/store',[OrderController::class, 'store'])->name('order.store');
 
-//edit and
+//edit and update
+
+Route::get('/order/edit',[OrderController::class,'edit'])->name('order.edit');
 
 
 
