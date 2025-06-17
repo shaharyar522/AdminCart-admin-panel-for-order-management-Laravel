@@ -16,7 +16,7 @@ class OrderController extends Controller
         $orders = order::paginate(4);
 
         return view('dashboard', compact('orders'));
-        
+
     }
 
     /**
@@ -72,7 +72,7 @@ class OrderController extends Controller
         $order_update->date = $request->customer_date;
         $order_update->amount = $request->customer_amount;
         $order_update->status = $request->customer_status;
-
+        
         $order_update->save();
 
         return redirect()->route('home')->with('success', 'Your order has been Update successfully!');
