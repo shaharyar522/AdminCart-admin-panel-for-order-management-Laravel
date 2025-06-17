@@ -16,6 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href=" {{ asset('css/dashboad.css') }} ">
+    {{-- uay hamray pass jo add data or eidt page ki css hain form ki  --}}
+    <link rel="stylesheet" href="{{asset('css/order_pages.css')}}">
 
 </head>
 
@@ -37,7 +39,7 @@
 
 
   
-
+{{-- this is data insert into database --}}
     @if(session('success'))
     <script>
         Swal.fire({
@@ -49,6 +51,12 @@
     });
     </script>
     @endif
+
+    {{-- this is the update sweet alert message --}}
+
+    
+
+
 
 </body>
 

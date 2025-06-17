@@ -194,16 +194,17 @@
                         <td>{{ $order->date}}</td>
                         <td>{{ $order->amount}}</td>
                         <td>{{ $order->status}}</td>
-                        <td> 
-                            <a href="{{route('order.edit')}}" class="action-btn edit" title="Edit"><i class="fas fa-edit"></i></a>
+                        <td>
+                            <a href="{{route('order.edit',$order->id)}}" class="action-btn edit" title="Edit"><i
+                                    class="fas fa-edit"></i></a>
 
-                            <a href="#" class="action-btn delete" title="Delete"><i class="fas fa-trash"></i></a>
+                            <form action="{{route('order.destory',$order->id)}}">
+                              <button  class="action-btn delete" title="Delete"><i class="fas fa-trash"></i></button>
+                            </form>
+
                         </td>
                     </tr>
                     @endforeach
-
-
-
 
                 </tbody>
 

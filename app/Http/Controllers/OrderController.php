@@ -13,7 +13,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = order::get();
-      
+
 
         return view('dashboard', compact('orders'));
     }
@@ -38,7 +38,7 @@ class OrderController extends Controller
             'status' => $request->customer_status,
         ]);
 
-    return redirect()->route('home')->with('success', 'Your order has been submitted successfully!');
+        return redirect()->route('home')->with('success', 'Your order has been submitted successfully!');
     }
 
     /**
@@ -52,24 +52,38 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Order $order)
+    public function edit($id)
     {
-        return view('orders.edit');
+        $order_edit = order::find($id);
+
+        return view('orders.edit', compact('order_edit'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, $id)
     {
-        //
+
+        $order_update = order::find($id);
+
+        $order_update->customer_name = $request->name;
+        $order_update->date = $request->customer_date;
+        $order_update->amount = $request->customer_amount;
+        $order_update->status = $request->customer_status;
+
+        $order_update->save();
+
+        return redirect()->route('home')->with('success', 'Your order has been Update successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        order::destroy($id);
+
+        return redirect()->route('home')->with('success', 'Order deleted successfully.');
     }
 }

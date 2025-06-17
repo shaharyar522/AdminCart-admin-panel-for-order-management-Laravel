@@ -11,9 +11,14 @@ Route::get('/', [OrderController::class, 'index'])->name('home');
 Route::get('/order/create',[OrderController::class, 'create'])->name('order.create');
 Route::post('/order/store',[OrderController::class, 'store'])->name('order.store');
 
-//edit and update
+//edit and update  
+Route::get('/order/edit/{id}',[OrderController::class,'edit'])->name('order.edit');
+Route::post('/order/update/{id}',[OrderController::class,'update'])->name('order.update');
 
-Route::get('/order/edit',[OrderController::class,'edit'])->name('order.edit');
+
+// delete 
+
+Route::delete('/order/delete/{id}', [OrderController::class, 'destroy'])->name('order.destory');
 
 
 
