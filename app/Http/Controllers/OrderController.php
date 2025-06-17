@@ -12,10 +12,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = order::get();
 
+        $orders = order::paginate(4);
 
         return view('dashboard', compact('orders'));
+        
     }
 
     /**

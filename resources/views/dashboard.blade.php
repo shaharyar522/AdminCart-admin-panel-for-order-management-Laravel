@@ -205,25 +205,22 @@
                                 <button type="submit" class="action-btn delete-btn" title="Delete"
                                     style="background: none; border: none; padding: 0; color: red;">
                                     <i class="fas fa-trash"></i>
-
-
                                 </button>
-
                             </form>
-
-
-
                         </td>
                     </tr>
                     @endforeach
-
                 </tbody>
-
             </table>
+
+            <div>
+                {{$orders->links('pagination::bootstrap-5')}}
+            </div>
+
+       
+
         </div>
-
     </div>
-
 
 
 
@@ -233,6 +230,6 @@
     <div class="footer">
         <p>© 2025 AdminPro Dashboard. All rights reserved. | Developed by Shahar Yar</p>
     </div>
-</main>
 
+</main>
 @endsection

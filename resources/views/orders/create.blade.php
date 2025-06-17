@@ -4,6 +4,8 @@
 
 @section('Main_Content')
 <main class="main-content">
+
+
     <!-- Header -->
     <div class="header">
         <div class="d-flex align-items-center">
@@ -34,7 +36,7 @@
             <div class="form-preview">
                 <div class="preview-content">
                     <i class="fas fa-shopping-bag"></i>
-                    <h3>New Order</h3>
+                    <h3>Add New Order</h3>
                     <p>Fill out the form to create a new customer order</p>
                 </div>
             </div>
@@ -44,7 +46,7 @@
                     @csrf
                     
                     <div class="form-header">
-                        <h2>Order Information</h2>
+                        <h2>Add Order Information</h2>
                         <div class="header-bar"></div>
                     </div>
 

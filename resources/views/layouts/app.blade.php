@@ -39,7 +39,7 @@
 
 
   
-{{-- this is data insert into database --}}
+{{-- ================================= Start the all show sweet alert message like insert and update message   ================================= --}}
     @if(session('success'))
     <script>
         Swal.fire({
@@ -52,7 +52,20 @@
     </script>
     @endif
 
-  {{-- this is the Delete confimration message sweet alert  --}}
+
+{{-- ================================= End the all show sweet alert message like insert and update message   ================================= --}}
+
+
+
+
+
+
+
+
+
+
+{{-- ==================================  Start the Delete confirmation sweet alert message  ================================== --}}
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
         const deleteForms = document.querySelectorAll('.delete-form');
@@ -89,7 +102,7 @@
     });
 </script>
 
-
+{{-- ==================================  End the Delete confirmation sweet alert message  ================================== --}}
 
 
 

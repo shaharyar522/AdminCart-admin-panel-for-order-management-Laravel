@@ -28,6 +28,8 @@
         </div>
     </div>
 
+
+
     <!-- Order Form Section -->
 
 
@@ -43,11 +45,12 @@
             </div>
 
             <div class="form-content">
-                <form action="{{route('order.update',$order_edit->id)}}" method="POST" class="order-form" autocomplete="off">
+                <form action="{{route('order.update',$order_edit->id)}}" method="POST" class="order-form"
+                    autocomplete="off">
                     @csrf
 
                     <div class="form-header">
-                        <h2>Order Information</h2>
+                        <h2>Update Order Information</h2>
                         <div class="header-bar"></div>
                     </div>
 
@@ -106,10 +109,5 @@
         </div>
     </div>
 </main>
-
-<style>
-
-</style>
-
 
 @endsection
