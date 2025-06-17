@@ -18,7 +18,7 @@ Route::post('/order/update/{id}',[OrderController::class,'update'])->name('order
 
 // delete 
 
-Route::delete('/order/delete/{id}', [OrderController::class, 'destroy'])->name('order.destory');
+Route::delete('/order/delete/{id}', [OrderController::class, 'destroy'])->name('order.destroy'); 
 
 
 

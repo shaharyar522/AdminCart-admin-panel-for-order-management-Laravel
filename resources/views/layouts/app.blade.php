@@ -52,9 +52,44 @@
     </script>
     @endif
 
-    {{-- this is the update sweet alert message --}}
+  {{-- this is the Delete confimration message sweet alert  --}}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteForms = document.querySelectorAll('.delete-form');
 
-    
+        deleteForms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // stop the form from submitting
+                Swal.fire({
+                    title: 'Are you sure to delete?',
+                    text: "This action cannot be undone!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, delete it!',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit(); // submit the form if confirmed
+                    }
+                });
+            });
+        });
+
+        // Success message after delete (from session)
+        @if(session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ session('success') }}',
+                confirmButtonColor: '#3085d6'
+            });
+        @endif
+    });
+</script>
+
+
 
 
 

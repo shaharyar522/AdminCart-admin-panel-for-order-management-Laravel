@@ -198,9 +198,20 @@
                             <a href="{{route('order.edit',$order->id)}}" class="action-btn edit" title="Edit"><i
                                     class="fas fa-edit"></i></a>
 
-                            <form action="{{route('order.destory',$order->id)}}">
-                              <button  class="action-btn delete" title="Delete"><i class="fas fa-trash"></i></button>
+                            <form action="{{ route('order.destroy', $order->id) }}" method="POST"
+                                class="delete-form d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="action-btn delete-btn" title="Delete"
+                                    style="background: none; border: none; padding: 0; color: red;">
+                                    <i class="fas fa-trash"></i>
+
+
+                                </button>
+
                             </form>
+
+
 
                         </td>
                     </tr>
